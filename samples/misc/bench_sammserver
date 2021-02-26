@@ -1,0 +1,21 @@
+# Tests are approximate using memory only (no storage IO).
+PBKDF2-sha1      1387005 iterations per second for 256-bit key
+PBKDF2-sha256    1786330 iterations per second for 256-bit key
+PBKDF2-sha512    1294538 iterations per second for 256-bit key
+PBKDF2-ripemd160  809086 iterations per second for 256-bit key
+PBKDF2-whirlpool  482769 iterations per second for 256-bit key
+argon2i       6 iterations, 1048576 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+argon2id      6 iterations, 1048576 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+#     Algorithm |       Key |      Encryption |      Decryption
+        aes-cbc        128b       619.6 MiB/s      2127.8 MiB/s
+    serpent-cbc        128b        82.5 MiB/s       308.4 MiB/s
+    twofish-cbc        128b       182.7 MiB/s       365.5 MiB/s
+        aes-cbc        256b       466.3 MiB/s      1612.0 MiB/s
+    serpent-cbc        256b        89.7 MiB/s       307.9 MiB/s
+    twofish-cbc        256b       185.9 MiB/s       365.1 MiB/s
+        aes-xts        256b      1414.2 MiB/s      1416.7 MiB/s
+    serpent-xts        256b       319.2 MiB/s       305.5 MiB/s
+    twofish-xts        256b       355.6 MiB/s       358.5 MiB/s
+        aes-xts        512b      1126.1 MiB/s      1130.8 MiB/s
+    serpent-xts        512b       321.8 MiB/s       305.4 MiB/s
+    twofish-xts        512b       350.9 MiB/s       355.3 MiB/s
