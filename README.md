@@ -9,4 +9,5 @@ Contributing
 ------------
 For now, you can help by running `./collect.sh` on your Linux machine. It should
 be run from the project root directory and it will save a copy of your
-`/proc/crypto` file into the `samples/` subdirectory.
+`/proc/crypto` file into the `samples/` subdirectory. You may run
+`cryptsetup benchmark` to load additional common ciphers/modes.
