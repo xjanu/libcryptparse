@@ -1,0 +1,580 @@
+name         : xts(twofish)
+driver       : xts(ecb-twofish-3way)
+module       : xts
+priority     : 300
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : xts(serpent)
+driver       : xts(ecb-serpent-sse2)
+module       : xts
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : yes
+blocksize    : 16
+min keysize  : 0
+max keysize  : 64
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : xts(aes)
+driver       : xts(ecb(aes-asm))
+module       : xts
+priority     : 200
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : ecb(aes)
+driver       : ecb(aes-asm)
+module       : ecb
+priority     : 200
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : cbc(twofish)
+driver       : cbc(twofish-asm)
+module       : cbc
+priority     : 200
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : twofish
+driver       : twofish-generic
+module       : twofish_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : ctr(twofish)
+driver       : ctr-twofish-3way
+module       : twofish_x86_64_3way
+priority     : 300
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : cbc(twofish)
+driver       : cbc-twofish-3way
+module       : twofish_x86_64_3way
+priority     : 300
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : ecb(twofish)
+driver       : ecb-twofish-3way
+module       : twofish_x86_64_3way
+priority     : 300
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 0
+chunksize    : 16
+walksize     : 16
+
+name         : twofish
+driver       : twofish-asm
+module       : twofish_x86_64
+priority     : 200
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : cbc(serpent)
+driver       : cbc(serpent-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : __ctr(serpent)
+driver       : cryptd(__ctr-serpent-sse2)
+module       : cryptd
+priority     : 450
+refcnt       : 1
+selftest     : passed
+internal     : yes
+type         : skcipher
+async        : yes
+blocksize    : 1
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : ctr(serpent)
+driver       : ctr-serpent-sse2
+module       : serpent_sse2_x86_64
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : yes
+blocksize    : 1
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : __cbc(serpent)
+driver       : cryptd(__cbc-serpent-sse2)
+module       : cryptd
+priority     : 450
+refcnt       : 1
+selftest     : passed
+internal     : yes
+type         : skcipher
+async        : yes
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : cbc(serpent)
+driver       : cbc-serpent-sse2
+module       : serpent_sse2_x86_64
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : yes
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : __ecb(serpent)
+driver       : cryptd(__ecb-serpent-sse2)
+module       : cryptd
+priority     : 450
+refcnt       : 1
+selftest     : passed
+internal     : yes
+type         : skcipher
+async        : yes
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 0
+chunksize    : 16
+walksize     : 16
+
+name         : ecb(serpent)
+driver       : ecb-serpent-sse2
+module       : serpent_sse2_x86_64
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : yes
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 0
+chunksize    : 16
+walksize     : 16
+
+name         : __ctr(serpent)
+driver       : __ctr-serpent-sse2
+module       : serpent_sse2_x86_64
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : yes
+type         : skcipher
+async        : no
+blocksize    : 1
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : __cbc(serpent)
+driver       : __cbc-serpent-sse2
+module       : serpent_sse2_x86_64
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : yes
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : __ecb(serpent)
+driver       : __ecb-serpent-sse2
+module       : serpent_sse2_x86_64
+priority     : 400
+refcnt       : 1
+selftest     : passed
+internal     : yes
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 0
+chunksize    : 16
+walksize     : 16
+
+name         : tnepres
+driver       : tnepres-generic
+module       : serpent_generic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+
+name         : serpent
+driver       : serpent-generic
+module       : serpent_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+
+name         : cbc(aes)
+driver       : cbc(aes-asm)
+module       : cbc
+priority     : 200
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+chunksize    : 16
+walksize     : 16
+
+name         : crc32c
+driver       : crc32c-generic
+module       : crc32c_generic
+priority     : 100
+refcnt       : 3
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 1
+digestsize   : 4
+
+name         : aes
+driver       : aes-asm
+module       : aes_x86_64
+priority     : 200
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : pkcs1pad(rsa,sha256)
+driver       : pkcs1pad(rsa-generic,sha256)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : akcipher
+
+name         : hmac(sha256)
+driver       : hmac(sha256-generic)
+module       : kernel
+priority     : 100
+refcnt       : 2
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : hmac(sha1)
+driver       : hmac(sha1-generic)
+module       : kernel
+priority     : 100
+refcnt       : 2
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : lzo
+driver       : lzo-scomp
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : scomp
+
+name         : lzo
+driver       : lzo-generic
+module       : kernel
+priority     : 0
+refcnt       : 2
+selftest     : passed
+internal     : no
+type         : compression
+
+name         : crct10dif
+driver       : crct10dif-generic
+module       : kernel
+priority     : 100
+refcnt       : 2
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 1
+digestsize   : 2
+
+name         : zlib-deflate
+driver       : zlib-deflate-scomp
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : scomp
+
+name         : deflate
+driver       : deflate-scomp
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : scomp
+
+name         : deflate
+driver       : deflate-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : compression
+
+name         : aes
+driver       : aes-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : sha224
+driver       : sha224-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 28
+
+name         : sha256
+driver       : sha256-generic
+module       : kernel
+priority     : 100
+refcnt       : 2
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : sha1
+driver       : sha1-generic
+module       : kernel
+priority     : 100
+refcnt       : 4
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : md5
+driver       : md5-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : digest_null
+driver       : digest_null-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 1
+digestsize   : 0
+
+name         : compress_null
+driver       : compress_null-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : compression
+
+name         : ecb(cipher_null)
+driver       : ecb-cipher_null
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : blkcipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+ivsize       : 0
+geniv        : <default>
+
+name         : cipher_null
+driver       : cipher_null-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : cipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+
+name         : rsa
+driver       : rsa-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : akcipher
+
+name         : dh
+driver       : dh-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : kpp
+
