@@ -1,0 +1,113 @@
+name         : crct10dif
+driver       : crct10dif-generic
+module       : crct10dif_generic
+priority     : 100
+refcnt       : 2
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 2
+
+name         : cbc(aes)
+driver       : cbc(aes-asm)
+module       : kernel
+priority     : 200
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : <default>
+
+name         : hmac(sha1)
+driver       : hmac(sha1-generic)
+module       : kernel
+priority     : 0
+refcnt       : 2
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : lzo
+driver       : lzo-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : compression
+
+name         : crc32c
+driver       : crc32c-generic
+module       : kernel
+priority     : 100
+refcnt       : 2
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 4
+
+name         : aes
+driver       : aes-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : sha224
+driver       : sha224-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 28
+
+name         : sha256
+driver       : sha256-generic
+module       : kernel
+priority     : 0
+refcnt       : 2
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : sha1
+driver       : sha1-generic
+module       : kernel
+priority     : 0
+refcnt       : 5
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : md5
+driver       : md5-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : aes
+driver       : aes-asm
+module       : kernel
+priority     : 200
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
