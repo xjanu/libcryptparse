@@ -53,9 +53,52 @@ class Cipher:
 
         return "\n".join(out)
 
+    def keys(self):
+        return self.dict.keys()
+    fields = keys
+
 
 def main():
-    from sys import argv
+    from sys import argv, stderr
+
+    POSSIBLE_KEYS = [
+        "async",
+        "blocksize",
+        "chunksize",
+        "digestsize",
+        "driver",
+        "geniv",
+        "internal",
+        "ivsize",
+        "maxauthsize",
+        "max keysize",
+        "min keysize",
+        "module",
+        "name",
+        "priority",
+        "refcnt",
+        "seedsize",
+        "selftest",
+        "type",
+        "walksize"]
+
+    KNOWN_TYPES = [
+        "ablkcipher",
+        "aead",
+        "ahash",
+        "akcipher",
+        "blkcipher",
+        "cipher",
+        "compression",
+        "digest",
+        "givcipher",
+        "kpp",
+        "nivaead",
+        "rng",
+        "scomp",
+        "shash",
+        "skcipher"]
+
 
     ciphers = []
 
@@ -64,10 +107,54 @@ def main():
             parser = Parser(file.read(), filename)
             ciphers.extend(parser.parse())
 
+    # Create the table
+    table = dict()
+    for type in KNOWN_TYPES:
+        table[type] = dict()
+        for field in POSSIBLE_KEYS:
+            # [0] - All ciphers of type have this field
+            # [1] - No  ciphers of type have this field
+            table[type][field] = [True, True]
+
     for cipher in ciphers:
-        # Edit filters here, too lazy to implement cmdline parsing
-        if "cipher" in cipher.dict["type"]:
-            print(cipher)
+
+        # Check if all ciphers contain only known fields
+        if not all(map(POSSIBLE_KEYS.__contains__, cipher.keys())):
+            print(f"cipher {cipher.name} contains an unknown field.", cipher,
+                  file=stderr, sep='\n')
+
+        # Check if all cipher types are known
+        if cipher.dict["type"] not in KNOWN_TYPES:
+            print(f"cipher {cipher.name} contains is of unknown type "
+                  f"({cipher.dict['type']}).", cipher,
+                  file=stderr, sep='\n')
+
+        # Populate the table
+        for field in POSSIBLE_KEYS:
+            if field in cipher.keys():
+                table[cipher.dict["type"]][field][1] = False
+            else:
+                table[cipher.dict["type"]][field][0] = False
+
+    # Print table header
+    print(f"|type/field |", end="")
+    for field in POSSIBLE_KEYS:
+        print(f"{field}|", end="")
+    print(f"\n|-----------|", end="")
+    for field in POSSIBLE_KEYS:
+        print(f":{'-'*(len(field)-2)}:|", end="")
+    print()
+
+    # Print the table
+    for type, fields in table.items():
+        print(f"|{type:11}|", end="")
+        for field in POSSIBLE_KEYS:
+            if fields[field] == [False, False]:  out = '.'
+            elif fields[field] == [True, False]: out = '✔'
+            elif fields[field] == [False, True]: out = '✕'
+            else:                                out = ' '
+            print(f"{out:{len(field)}}|", end="")
+        print()
 
 
 if __name__ == "__main__":
