@@ -1,1 +1,6 @@
-__pycache__/
+/*
+!/samples/
+!/parse.py
+!/collect.sh
+!/README.md
+!/.gitignore
