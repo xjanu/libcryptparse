@@ -1,0 +1,285 @@
+name         : aes
+driver       : aes-x86_64
+module       : aes_x86_64
+priority     : 200
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : tgr128
+driver       : tgr128-generic
+module       : tgr192
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 16
+
+name         : tgr160
+driver       : tgr160-generic
+module       : tgr192
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 20
+
+name         : tgr192
+driver       : tgr192-generic
+module       : tgr192
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 24
+
+name         : wp256
+driver       : wp256-generic
+module       : wp512
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 32
+
+name         : wp384
+driver       : wp384-generic
+module       : wp512
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 48
+
+name         : wp512
+driver       : wp512-generic
+module       : wp512
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 64
+
+name         : xeta
+driver       : xeta-generic
+module       : tea
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : xtea
+driver       : xtea-generic
+module       : tea
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : tea
+driver       : tea-generic
+module       : tea
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : deflate
+driver       : deflate-generic
+module       : deflate
+priority     : 0
+type         : compression
+
+name         : twofish
+driver       : twofish-generic
+module       : twofish
+priority     : 0
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : sha512
+driver       : sha512-generic
+module       : sha512
+priority     : 0
+type         : digest
+blocksize    : 128
+digestsize   : 64
+
+name         : sha384
+driver       : sha384-generic
+module       : sha512
+priority     : 0
+type         : digest
+blocksize    : 128
+digestsize   : 48
+
+name         : sha256
+driver       : sha256-generic
+module       : sha256
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 32
+
+name         : tnepres
+driver       : tnepres-generic
+module       : serpent
+priority     : 0
+type         : cipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+
+name         : serpent
+driver       : serpent-generic
+module       : serpent
+priority     : 0
+type         : cipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+
+name         : michael_mic
+driver       : michael_mic-generic
+module       : michael_mic
+priority     : 0
+type         : digest
+blocksize    : 8
+digestsize   : 8
+
+name         : md5
+driver       : md5-generic
+module       : md5
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 16
+
+name         : md4
+driver       : md4-generic
+module       : md4
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 16
+
+name         : khazad
+driver       : khazad-generic
+module       : khazad
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : des3_ede
+driver       : des3_ede-generic
+module       : des
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 24
+max keysize  : 24
+
+name         : des
+driver       : des-generic
+module       : des
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+
+name         : compress_null
+driver       : compress_null-generic
+module       : crypto_null
+priority     : 0
+type         : compression
+
+name         : digest_null
+driver       : digest_null-generic
+module       : crypto_null
+priority     : 0
+type         : digest
+blocksize    : 1
+digestsize   : 0
+
+name         : cipher_null
+driver       : cipher_null-generic
+module       : crypto_null
+priority     : 0
+type         : cipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+
+name         : cast6
+driver       : cast6-generic
+module       : cast6
+priority     : 0
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : cast5
+driver       : cast5-generic
+module       : cast5
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 5
+max keysize  : 16
+
+name         : blowfish
+driver       : blowfish-generic
+module       : blowfish
+priority     : 0
+type         : cipher
+blocksize    : 8
+min keysize  : 4
+max keysize  : 56
+
+name         : arc4
+driver       : arc4-generic
+module       : arc4
+priority     : 0
+type         : cipher
+blocksize    : 1
+min keysize  : 1
+max keysize  : 256
+
+name         : anubis
+driver       : anubis-generic
+module       : anubis
+priority     : 0
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 40
+
+name         : aes
+driver       : aes-generic
+module       : aes_generic
+priority     : 100
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : crc32c
+driver       : crc32c-generic
+module       : kernel
+priority     : 0
+type         : digest
+blocksize    : 32
+digestsize   : 4
+
+name         : sha1
+driver       : sha1-generic
+module       : kernel
+priority     : 0
+type         : digest
+blocksize    : 64
+digestsize   : 20
+
