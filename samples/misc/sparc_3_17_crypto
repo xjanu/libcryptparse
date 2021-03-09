@@ -1,0 +1,2008 @@
+name         : authenc(hmac(sha512),cbc(des3_ede))
+driver       : authenc(hmac(sha512-generic),cbc(des3_ede-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 64
+geniv        : <built-in>
+
+name         : authenc(hmac(sha512),cbc(des))
+driver       : authenc(hmac(sha512-generic),cbc(des-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 64
+geniv        : <built-in>
+
+name         : authenc(hmac(sha384),cbc(des3_ede))
+driver       : authenc(hmac(sha384-generic),cbc(des3_ede-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 48
+geniv        : <built-in>
+
+name         : authenc(hmac(sha384),cbc(des))
+driver       : authenc(hmac(sha384-generic),cbc(des-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 48
+geniv        : <built-in>
+
+name         : authenc(hmac(sha256),cbc(des3_ede))
+driver       : authenc(hmac(sha256-generic),cbc(des3_ede-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 32
+geniv        : <built-in>
+
+name         : authenc(hmac(sha256),cbc(des))
+driver       : authenc(hmac(sha256-generic),cbc(des-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 32
+geniv        : <built-in>
+
+name         : authenc(hmac(sha224),cbc(des3_ede))
+driver       : authenc(hmac(sha224-generic),cbc(des3_ede-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 28
+geniv        : <built-in>
+
+name         : authenc(hmac(sha224),cbc(des))
+driver       : authenc(hmac(sha224-generic),cbc(des-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 28
+geniv        : <built-in>
+
+name         : authenc(hmac(sha1),cbc(des3_ede))
+driver       : authenc(hmac(sha1-generic),cbc(des3_ede-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 20
+geniv        : <built-in>
+
+name         : authenc(hmac(sha1),cbc(des))
+driver       : authenc(hmac(sha1-generic),cbc(des-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 8
+ivsize       : 8
+maxauthsize  : 20
+geniv        : <built-in>
+
+name         : authenc(hmac(sha1),ecb(cipher_null))
+driver       : authenc(hmac(sha1-generic),ecb-cipher_null)
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 1
+ivsize       : 0
+maxauthsize  : 20
+geniv        : <built-in>
+
+name         : authenc(hmac(md5),ecb(cipher_null))
+driver       : authenc(hmac(md5-generic),ecb-cipher_null)
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 1
+ivsize       : 0
+maxauthsize  : 16
+geniv        : <built-in>
+
+name         : authenc(hmac(sha1),cbc(aes))
+driver       : authenc(hmac(sha1-generic),cbc(aes-generic))
+module       : authenc
+priority     : 1000
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : no
+blocksize    : 16
+ivsize       : 16
+maxauthsize  : 20
+geniv        : <built-in>
+
+name         : cmac(des3_ede)
+driver       : cmac(des3_ede-generic)
+module       : cmac
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 8
+digestsize   : 8
+
+name         : cmac(aes)
+driver       : cmac(aes-generic)
+module       : cmac
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 16
+digestsize   : 16
+
+name         : rfc4543(gcm(aes))
+driver       : rfc4543(gcm_base(ctr(aes-generic),ghash-generic))
+module       : seqiv
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : yes
+blocksize    : 1
+ivsize       : 8
+maxauthsize  : 16
+geniv        : seqiv
+
+name         : rfc4543(gcm(aes))
+driver       : rfc4543(gcm_base(ctr(aes-generic),ghash-generic))
+module       : gcm
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : nivaead
+async        : yes
+blocksize    : 1
+ivsize       : 8
+maxauthsize  : 16
+geniv        : seqiv
+
+name         : rfc4106(gcm(aes))
+driver       : rfc4106(gcm_base(ctr(aes-generic),ghash-generic))
+module       : seqiv
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : yes
+blocksize    : 1
+ivsize       : 8
+maxauthsize  : 16
+geniv        : seqiv
+
+name         : rfc4106(gcm(aes))
+driver       : rfc4106(gcm_base(ctr(aes-generic),ghash-generic))
+module       : gcm
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : nivaead
+async        : yes
+blocksize    : 1
+ivsize       : 8
+maxauthsize  : 16
+geniv        : seqiv
+
+name         : vmac(aes)
+driver       : vmac(aes-generic)
+module       : vmac
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 16
+digestsize   : 8
+
+name         : hmac(rmd160)
+driver       : hmac(rmd160-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : hmac(rmd128)
+driver       : hmac(rmd128-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : xcbc(aes)
+driver       : xcbc(aes-generic)
+module       : xcbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 16
+digestsize   : 16
+
+name         : hmac(sha224)
+driver       : hmac(sha224-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 28
+
+name         : hmac(sha512)
+driver       : hmac(sha512-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 128
+digestsize   : 64
+
+name         : hmac(sha384)
+driver       : hmac(sha384-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 128
+digestsize   : 48
+
+name         : hmac(sha256)
+driver       : hmac(sha256-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : hmac(sha1)
+driver       : hmac(sha1-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : hmac(md5)
+driver       : hmac(md5-generic)
+module       : hmac
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : rfc4309(ccm(aes))
+driver       : rfc4309(ccm_base(ctr(aes-generic),aes-generic))
+module       : seqiv
+priority     : 200
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : yes
+blocksize    : 1
+ivsize       : 8
+maxauthsize  : 16
+geniv        : seqiv
+
+name         : rfc4309(ccm(aes))
+driver       : rfc4309(ccm_base(ctr(aes-generic),aes-generic))
+module       : ccm
+priority     : 200
+refcnt       : 1
+selftest     : passed
+type         : nivaead
+async        : yes
+blocksize    : 1
+ivsize       : 8
+maxauthsize  : 16
+geniv        : seqiv
+
+name         : zlib
+driver       : zlib-generic
+module       : zlib
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : pcomp
+
+name         : ecb(seed)
+driver       : ecb(seed-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 16
+ivsize       : 0
+geniv        : <default>
+
+name         : cts(cbc(aes))
+driver       : cts(cbc(aes-generic))
+module       : seqiv
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : seqiv
+
+name         : cts(cbc(aes))
+driver       : cts(cbc(aes-generic))
+module       : cts
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : seqiv
+
+name         : ccm(aes)
+driver       : ccm_base(ctr(aes-generic),aes-generic)
+module       : ccm
+priority     : 200
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : yes
+blocksize    : 1
+ivsize       : 16
+maxauthsize  : 16
+geniv        : <built-in>
+
+name         : gcm(aes)
+driver       : gcm_base(ctr(aes-generic),ghash-generic)
+module       : gcm
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : aead
+async        : yes
+blocksize    : 1
+ivsize       : 16
+maxauthsize  : 16
+geniv        : <built-in>
+
+name         : salsa20
+driver       : salsa20-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 8
+geniv        : chainiv
+
+name         : xts(camellia)
+driver       : xts(camellia-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : eseqiv
+
+name         : xts(camellia)
+driver       : xts(camellia-generic)
+module       : xts
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : <default>
+
+name         : lrw(camellia)
+driver       : lrw(camellia-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : eseqiv
+
+name         : lrw(camellia)
+driver       : lrw(camellia-generic)
+module       : lrw
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : <default>
+
+name         : ctr(camellia)
+driver       : ctr(camellia-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ctr(camellia)
+driver       : ctr(camellia-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : cbc(camellia)
+driver       : cbc(camellia-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : eseqiv
+
+name         : cbc(camellia)
+driver       : cbc(camellia-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : <default>
+
+name         : ecb(camellia)
+driver       : ecb(camellia-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : pcbc(fcrypt)
+driver       : pcbc(fcrypt-generic)
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+ivsize       : 8
+geniv        : eseqiv
+
+name         : pcbc(fcrypt)
+driver       : pcbc(fcrypt-generic)
+module       : pcbc
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+ivsize       : 8
+geniv        : <default>
+
+name         : ecb(xeta)
+driver       : ecb(xeta-generic)
+module       : ecb
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+ivsize       : 0
+geniv        : <default>
+
+name         : tgr128
+driver       : tgr128-generic
+module       : tgr192
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : tgr160
+driver       : tgr160-generic
+module       : tgr192
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : tgr192
+driver       : tgr192-generic
+module       : tgr192
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 24
+
+name         : cbc(anubis)
+driver       : cbc(anubis-generic)
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 40
+ivsize       : 16
+geniv        : eseqiv
+
+name         : cbc(anubis)
+driver       : cbc(anubis-generic)
+module       : cbc
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 40
+ivsize       : 16
+geniv        : <default>
+
+name         : ecb(anubis)
+driver       : ecb(anubis-generic)
+module       : ecb
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 40
+ivsize       : 0
+geniv        : <default>
+
+name         : ecb(tnepres)
+driver       : ecb(tnepres-generic)
+module       : ecb
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : wp256
+driver       : wp256-generic
+module       : wp512
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : wp384
+driver       : wp384-generic
+module       : wp512
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 48
+
+name         : wp512
+driver       : wp512-generic
+module       : wp512
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 64
+
+name         : ecb(khazad)
+driver       : ecb(khazad-generic)
+module       : ecb
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+ivsize       : 0
+geniv        : <default>
+
+name         : ecb(xtea)
+driver       : ecb(xtea-generic)
+module       : ecb
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+ivsize       : 0
+geniv        : <default>
+
+name         : ecb(tea)
+driver       : ecb(tea-generic)
+module       : ecb
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+ivsize       : 0
+geniv        : <default>
+
+name         : xeta
+driver       : xeta-generic
+module       : tea
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : xtea
+driver       : xtea-generic
+module       : tea
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : tea
+driver       : tea-generic
+module       : tea
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : xts(cast6)
+driver       : xts(cast6-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : eseqiv
+
+name         : xts(cast6)
+driver       : xts(cast6-generic)
+module       : xts
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : <default>
+
+name         : lrw(cast6)
+driver       : lrw(cast6-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : eseqiv
+
+name         : lrw(cast6)
+driver       : lrw(cast6-generic)
+module       : lrw
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : <default>
+
+name         : ctr(cast6)
+driver       : ctr(cast6-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ctr(cast6)
+driver       : ctr(cast6-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : cbc(cast6)
+driver       : cbc(cast6-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : eseqiv
+
+name         : cbc(cast6)
+driver       : cbc(cast6-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : <default>
+
+name         : ecb(cast6)
+driver       : ecb(cast6-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : cast6
+driver       : cast6-generic
+module       : cast6_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : ctr(cast5)
+driver       : ctr(cast5-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 5
+max keysize  : 16
+ivsize       : 8
+geniv        : chainiv
+
+name         : ctr(cast5)
+driver       : ctr(cast5-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 5
+max keysize  : 16
+ivsize       : 8
+geniv        : chainiv
+
+name         : cbc(cast5)
+driver       : cbc(cast5-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 8
+min keysize  : 5
+max keysize  : 16
+ivsize       : 8
+geniv        : eseqiv
+
+name         : cbc(cast5)
+driver       : cbc(cast5-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 5
+max keysize  : 16
+ivsize       : 8
+geniv        : <default>
+
+name         : ecb(cast5)
+driver       : ecb(cast5-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 5
+max keysize  : 16
+ivsize       : 0
+geniv        : <default>
+
+name         : cast5
+driver       : cast5-generic
+module       : cast5_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 5
+max keysize  : 16
+
+name         : deflate
+driver       : deflate-generic
+module       : deflate
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : compression
+
+name         : rfc3686(ctr(aes))
+driver       : rfc3686(ctr(aes-generic))
+module       : seqiv
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 20
+max keysize  : 36
+ivsize       : 8
+geniv        : seqiv
+
+name         : rfc3686(ctr(aes))
+driver       : rfc3686(ctr(aes-generic))
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : ablkcipher
+async        : yes
+blocksize    : 1
+min keysize  : 20
+max keysize  : 36
+ivsize       : 8
+geniv        : seqiv
+
+name         : ctr(aes)
+driver       : ctr(aes-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ctr(aes)
+driver       : ctr(aes-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : lrw(aes)
+driver       : lrw(aes-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : eseqiv
+
+name         : lrw(aes)
+driver       : lrw(aes-generic)
+module       : lrw
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : <default>
+
+name         : ecb(aes)
+driver       : ecb(aes-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : lrw(serpent)
+driver       : lrw(serpent-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 48
+ivsize       : 16
+geniv        : eseqiv
+
+name         : lrw(serpent)
+driver       : lrw(serpent-generic)
+module       : lrw
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 48
+ivsize       : 16
+geniv        : <default>
+
+name         : ctr(serpent)
+driver       : ctr(serpent-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ctr(serpent)
+driver       : ctr(serpent-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ecb(serpent)
+driver       : ecb(serpent-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : lrw(twofish)
+driver       : lrw(twofish-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : eseqiv
+
+name         : lrw(twofish)
+driver       : lrw(twofish-generic)
+module       : lrw
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 48
+ivsize       : 16
+geniv        : <default>
+
+name         : ctr(twofish)
+driver       : ctr(twofish-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ctr(twofish)
+driver       : ctr(twofish-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : chainiv
+
+name         : ecb(twofish)
+driver       : ecb(twofish-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 0
+geniv        : <default>
+
+name         : ctr(blowfish)
+driver       : ctr(blowfish-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 4
+max keysize  : 56
+ivsize       : 8
+geniv        : chainiv
+
+name         : ctr(blowfish)
+driver       : ctr(blowfish-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 4
+max keysize  : 56
+ivsize       : 8
+geniv        : chainiv
+
+name         : cbc(blowfish)
+driver       : cbc(blowfish-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 8
+min keysize  : 4
+max keysize  : 56
+ivsize       : 8
+geniv        : eseqiv
+
+name         : cbc(blowfish)
+driver       : cbc(blowfish-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 4
+max keysize  : 56
+ivsize       : 8
+geniv        : <default>
+
+name         : ecb(blowfish)
+driver       : ecb(blowfish-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 4
+max keysize  : 56
+ivsize       : 0
+geniv        : <default>
+
+name         : ctr(des3_ede)
+driver       : ctr(des3_ede-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 24
+max keysize  : 24
+ivsize       : 8
+geniv        : chainiv
+
+name         : ctr(des3_ede)
+driver       : ctr(des3_ede-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 24
+max keysize  : 24
+ivsize       : 8
+geniv        : chainiv
+
+name         : cbc(des3_ede)
+driver       : cbc(des3_ede-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 8
+min keysize  : 24
+max keysize  : 24
+ivsize       : 8
+geniv        : eseqiv
+
+name         : cbc(des3_ede)
+driver       : cbc(des3_ede-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 24
+max keysize  : 24
+ivsize       : 8
+geniv        : <default>
+
+name         : ecb(des3_ede)
+driver       : ecb(des3_ede-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 24
+max keysize  : 24
+ivsize       : 0
+geniv        : <default>
+
+name         : ctr(des)
+driver       : ctr(des-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : yes
+blocksize    : 1
+min keysize  : 8
+max keysize  : 8
+ivsize       : 8
+geniv        : chainiv
+
+name         : ctr(des)
+driver       : ctr(des-generic)
+module       : ctr
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 8
+max keysize  : 8
+ivsize       : 8
+geniv        : chainiv
+
+name         : cbc(des)
+driver       : cbc(des-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+ivsize       : 8
+geniv        : eseqiv
+
+name         : cbc(des)
+driver       : cbc(des-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+ivsize       : 8
+geniv        : <default>
+
+name         : ecb(des)
+driver       : ecb(des-generic)
+module       : ecb
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+ivsize       : 0
+geniv        : <default>
+
+name         : sha384
+driver       : sha384-generic
+module       : sha512_generic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 128
+digestsize   : 48
+
+name         : sha512
+driver       : sha512-generic
+module       : sha512_generic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 128
+digestsize   : 64
+
+name         : sha224
+driver       : sha224-generic
+module       : sha256_generic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 28
+
+name         : sha256
+driver       : sha256-generic
+module       : sha256_generic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : seed
+driver       : seed-generic
+module       : seed
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 16
+
+name         : salsa20
+driver       : salsa20-generic
+module       : salsa20_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 16
+max keysize  : 32
+ivsize       : 8
+geniv        : <default>
+
+name         : rmd320
+driver       : rmd320-generic
+module       : rmd320
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 40
+
+name         : rmd256
+driver       : rmd256-generic
+module       : rmd256
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : rmd160
+driver       : rmd160-generic
+module       : rmd160
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : rmd128
+driver       : rmd128-generic
+module       : rmd128
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : michael_mic
+driver       : michael_mic-generic
+module       : michael_mic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 8
+digestsize   : 8
+
+name         : md4
+driver       : md4-generic
+module       : md4
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
+name         : lzo
+driver       : lzo-generic
+module       : lzo
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : compression
+
+name         : khazad
+driver       : khazad-generic
+module       : khazad
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 16
+max keysize  : 16
+
+name         : ghash
+driver       : ghash-generic
+module       : ghash_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 16
+digestsize   : 16
+
+name         : fcrypt
+driver       : fcrypt-generic
+module       : fcrypt
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+
+name         : digest_null
+driver       : digest_null-generic
+module       : crypto_null
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 0
+
+name         : compress_null
+driver       : compress_null-generic
+module       : crypto_null
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : compression
+
+name         : ecb(cipher_null)
+driver       : ecb-cipher_null
+module       : crypto_null
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+ivsize       : 0
+geniv        : <default>
+
+name         : cipher_null
+driver       : cipher_null-generic
+module       : crypto_null
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 1
+min keysize  : 0
+max keysize  : 0
+
+name         : crc32
+driver       : crc32-table
+module       : crc32
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 4
+
+name         : crc32c
+driver       : crc32c-generic
+module       : crc32c_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 4
+
+name         : camellia
+driver       : camellia-generic
+module       : camellia_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : blowfish
+driver       : blowfish-generic
+module       : blowfish_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 4
+max keysize  : 56
+
+name         : ecb(arc4)
+driver       : ecb(arc4)-generic
+module       : arc4
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 1
+min keysize  : 1
+max keysize  : 256
+ivsize       : 0
+geniv        : <default>
+
+name         : arc4
+driver       : arc4-generic
+module       : arc4
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 1
+min keysize  : 1
+max keysize  : 256
+
+name         : anubis
+driver       : anubis-generic
+module       : anubis
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 40
+
+name         : stdrng
+driver       : ansi_cprng
+module       : ansi_cprng
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : rng
+seedsize     : 48
+
+name         : xts(twofish)
+driver       : xts(twofish-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : eseqiv
+
+name         : xts(twofish)
+driver       : xts(twofish-generic)
+module       : xts
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : <default>
+
+name         : xts(serpent)
+driver       : xts(serpent-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 0
+max keysize  : 64
+ivsize       : 16
+geniv        : eseqiv
+
+name         : xts(serpent)
+driver       : xts(serpent-generic)
+module       : xts
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 64
+ivsize       : 16
+geniv        : <default>
+
+name         : xts(aes)
+driver       : xts(aes-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : eseqiv
+
+name         : xts(aes)
+driver       : xts(aes-generic)
+module       : xts
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 32
+max keysize  : 64
+ivsize       : 16
+geniv        : <default>
+
+name         : cbc(twofish)
+driver       : cbc(twofish-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : eseqiv
+
+name         : cbc(twofish)
+driver       : cbc(twofish-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : <default>
+
+name         : twofish
+driver       : twofish-generic
+module       : twofish_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : cbc(serpent)
+driver       : cbc(serpent-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+geniv        : eseqiv
+
+name         : cbc(serpent)
+driver       : cbc(serpent-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+ivsize       : 16
+geniv        : <default>
+
+name         : tnepres
+driver       : tnepres-generic
+module       : serpent_generic
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+
+name         : serpent
+driver       : serpent-generic
+module       : serpent_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 0
+max keysize  : 32
+
+name         : cbc(aes)
+driver       : cbc(aes-generic)
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : givcipher
+async        : no
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : eseqiv
+
+name         : cbc(aes)
+driver       : cbc(aes-generic)
+module       : cbc
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : blkcipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+ivsize       : 16
+geniv        : <default>
+
+name         : des3_ede
+driver       : des3_ede-generic
+module       : des_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 24
+max keysize  : 24
+
+name         : des
+driver       : des-generic
+module       : des_generic
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 8
+min keysize  : 8
+max keysize  : 8
+
+name         : crct10dif
+driver       : crct10dif-generic
+module       : crct10dif_generic
+priority     : 100
+refcnt       : 2
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 2
+
+name         : stdrng
+driver       : krng
+module       : kernel
+priority     : 200
+refcnt       : 2
+selftest     : passed
+type         : rng
+seedsize     : 0
+
+name         : aes
+driver       : aes-generic
+module       : kernel
+priority     : 100
+refcnt       : 1
+selftest     : passed
+type         : cipher
+blocksize    : 16
+min keysize  : 16
+max keysize  : 32
+
+name         : sha1
+driver       : sha1-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 20
+
+name         : md5
+driver       : md5-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+
