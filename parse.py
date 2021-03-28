@@ -83,22 +83,22 @@ def main():
         "walksize"]
 
     KNOWN_TYPES = [
+        "cipher",
         "ablkcipher",
-        "aead",
-        "ahash",
         "akcipher",
         "blkcipher",
-        "cipher",
+        "givcipher",
+        "skcipher",
+        "aead",
+        "nivaead",
+        "ahash",
+        "shash",
         "compression",
         "digest",
-        "givcipher",
         "kpp",
-        "nivaead",
         "pcomp",
-        "rng",
         "scomp",
-        "shash",
-        "skcipher"]
+        "rng"]
 
 
     ciphers = []
