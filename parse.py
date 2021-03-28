@@ -94,6 +94,7 @@ def main():
         "givcipher",
         "kpp",
         "nivaead",
+        "pcomp",
         "rng",
         "scomp",
         "shash",
