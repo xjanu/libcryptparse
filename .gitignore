@@ -4,3 +4,5 @@
 !/collect.sh
 !/README.md
 !/.gitignore
+!/include
+!/src
