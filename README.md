@@ -1,8 +1,8 @@
 LibCryptParse
 =============
-Soon to be a library for parsing linux' `/proc/crypto` file
+A **work in progress** C99 library for parsing linux' `/proc/crypto` file.
 
-Now collecting `/proc/crypto` files from the wild to analyze them and search for
+Now also collecting `/proc/crypto` files from the wild to analyze them and search for
 common patterns.
 
 Contributing
