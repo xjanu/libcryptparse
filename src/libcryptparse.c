@@ -9,10 +9,6 @@
 
 #include "libcryptparse.h"
 
-// Check cryptparse_alg_parse format when changing these macro values.
-#define MAX_FIELD_LENGTH 16  // 12 should be enough
-#define MAX_VALUE_LENGTH 128
-
 // TODO: Check all mallocs
 
 static char *_alg_string_thing(char *value) {
