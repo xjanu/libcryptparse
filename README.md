@@ -5,6 +5,22 @@ A **work in progress** C99 library for parsing linux' `/proc/crypto` file.
 Now also collecting `/proc/crypto` files from the wild to analyze them and search for
 common patterns.
 
+Build instructions
+------------------
+Out-of-source build:
+```
+mkdir build/
+cd build/
+cmake ../
+make
+```
+This will build both the `libcryptparse` library and `lscrypto` executable and
+place them in the `build/` directory.
+
+To build just the library, run `make cryptparse` instead. For development build,
+you may want to run cmake with the `-DCMAKE_BUILD_TYPE=Debug` flag, for building
+a static library run cmake with `-DBUILD_SHARED_LIBS=OFF` flag.
+
 Contributing
 ------------
 For now, you can help by running `./collect.sh` on your Linux machine. It should
