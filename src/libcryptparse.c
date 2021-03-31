@@ -38,18 +38,6 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 {
 	algorithm->used_fields = 0;
 
-        // The following code didn't work, as the fscanf pattern ate all initial
-	// whitespace, namely including previous empty lines.
-	/*char field[MAX_FIELD_LENGTH] = {0, };
-	char value[MAX_VALUE_LENGTH] = {0, };
-	// Create the fscanf format string with max field widths to avoid buffer
-	// overrun. The format will look like: "%15s : %127s%*1[\n]",
-	// where 15 and 127 are the macro values.
-	char format[24];
-	snprintf(format, 24,
-	         "%%%ds : %%%ds%%*1[\n]", MAX_FIELD_LENGTH - 1, MAX_VALUE_LENGTH - 1);
-	while (fscanf(fp, format, field, value) == 2) {*/
-
 	char *field, *value, *line = NULL;
 	size_t line_buf_len = 0;
 	ssize_t nread;
