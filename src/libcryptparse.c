@@ -75,10 +75,14 @@ static bool value_parser_unsigned(unsigned *res, char *value)
 }
 
 static void _alg_destroy(struct cryptparse_alg *algorithm) {
-	free(algorithm->type);
-	free(algorithm->name);
-	free(algorithm->driver);
-	free(algorithm->module);
+	if (algorithm->used_fields & cryptparse_alg_type)
+		free(algorithm->type);
+	if (algorithm->used_fields & cryptparse_alg_name)
+		free(algorithm->name);
+	if (algorithm->used_fields & cryptparse_alg_driver)
+		free(algorithm->driver);
+	if (algorithm->used_fields & cryptparse_alg_module)
+		free(algorithm->module);
 	if (algorithm->used_fields & cryptparse_alg_geniv)
 		free(algorithm->geniv);
 	algorithm->used_fields = 0;
