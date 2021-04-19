@@ -12,6 +12,12 @@ if [ ! -f "/proc/crypto" ]; then
     exit 2
 fi
 
+# Check if user has root privileges
+if [ `whoami` == 'root' ]; then
+    echo "Try to load additional crypto modules"
+    ./load-modules.sh
+fi
+
 # Where to copy the /proc/crypto
 dir='samples/'`uname --kernel-release`
 file=`sha1sum /proc/crypto | cut -f1 -d' '`
