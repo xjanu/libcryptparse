@@ -56,7 +56,8 @@ uint32_t field_lookup_from_str(char *from)
 	return 0;
 }
 
-static int value_parser_string(char **res, char *value) {
+static int value_parser_string(char **res, char *value)
+{
 	*res = calloc(strlen(value) + 1, sizeof(char));
 	if (*res == NULL)
 		return ENOMEM;
@@ -65,7 +66,7 @@ static int value_parser_string(char **res, char *value) {
 }
 
 static int value_parser_bool(bool *res, char *value,
-                              const char *trueval, const char *falseval)
+                             const char *trueval, const char *falseval)
 {
 	if (strcmp(value, trueval) == 0) {
 		*res = true;
@@ -87,7 +88,8 @@ static int value_parser_unsigned(unsigned *res, char *value)
 	return errno;
 }
 
-static void _alg_destroy(struct cryptparse_alg *algorithm) {
+static void _alg_destroy(struct cryptparse_alg *algorithm)
+{
 	if (algorithm->used_fields & cryptparse_alg_type)
 		free(algorithm->type);
 	if (algorithm->used_fields & cryptparse_alg_name)
