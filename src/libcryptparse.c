@@ -12,6 +12,8 @@
 
 #include "libcryptparse.h"
 
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
+
 // TODO: Check all mallocs
 
 // Used for binding strings to fields
@@ -122,9 +124,7 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 		char *value = colon + 2;
 
 		int alg_field = 0;
-		for (size_t i = 0;
-		     i < sizeof(field_lookup)/ sizeof(struct field_binding);
-		     ++i) {
+		for (size_t i = 0; i < ARRAY_SIZE(field_lookup); ++i) {
 			if (strcmp(field, field_lookup[i].string) == 0) {
 				alg_field = field_lookup[i].field;
 				break;
