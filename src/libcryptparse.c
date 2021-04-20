@@ -42,15 +42,15 @@ static const struct field_binding field_lookup[] = {
 	{"walksize",    cryptparse_alg_walksize}
 };
 
-static bool value_parser_string(char **res, char *value) {
+static int value_parser_string(char **res, char *value) {
 	*res = calloc(strlen(value) + 1, sizeof(char));
 	if (*res == NULL)
-		return false;
+		return ENOMEM;
 	strcpy(*res, value);
-	return true;
+	return 0;
 }
 
-static bool value_parser_bool(bool *res, char *value,
+static int value_parser_bool(bool *res, char *value,
                               const char *trueval, const char *falseval)
 {
 	if (strcmp(value, trueval) == 0) {
@@ -58,20 +58,19 @@ static bool value_parser_bool(bool *res, char *value,
 	} else if (strcmp(value, falseval) == 0) {
 		*res = false;
 	} else {
-		errno = EINVAL;
-		return false;
+		return EINVAL;
 	}
-	return true;
+	return 0;
 }
 
-static bool value_parser_unsigned(unsigned *res, char *value)
+static int value_parser_unsigned(unsigned *res, char *value)
 {
 	errno = 0;
 	unsigned long big = strtoul(value, NULL, 10);
-	if (big > UINT_MAX)
-		errno = ERANGE;
 	*res = big;
-	return errno == 0 ? true : false;
+	if (big > UINT_MAX)
+		return ERANGE;
+	return errno;
 }
 
 static void _alg_destroy(struct cryptparse_alg *algorithm) {
@@ -135,7 +134,7 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 
 		algorithm->used_fields |= alg_field;
 
-		bool parser_ret;
+		int parser_ret;
 		switch(alg_field) {
 		// String members
 		case cryptparse_alg_type:
@@ -200,7 +199,8 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 		default:
 			assert(false);
 		}
-		if (!parser_ret) {
+		if (parser_ret != 0) {
+			errno = parser_ret;
 			fprintf(stderr, "%s ", field);
 			perror("value_parser");
 			ret = 1;
