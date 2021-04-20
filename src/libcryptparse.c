@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -44,6 +45,16 @@ static const struct field_binding field_lookup[] = {
 	{"selftest",    cryptparse_alg_selftest},
 	{"walksize",    cryptparse_alg_walksize}
 };
+
+uint32_t field_lookup_from_str(char *from)
+{
+	for (size_t i = 0; i < ARRAY_SIZE(field_lookup); ++i) {
+		if (strcmp(from, field_lookup[i].string) == 0) {
+			return field_lookup[i].field;
+		}
+	}
+	return 0;
+}
 
 static int value_parser_string(char **res, char *value) {
 	*res = calloc(strlen(value) + 1, sizeof(char));
@@ -123,13 +134,7 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 		line[nread] = '\0';
 		char *value = colon + 2;
 
-		int alg_field = 0;
-		for (size_t i = 0; i < ARRAY_SIZE(field_lookup); ++i) {
-			if (strcmp(field, field_lookup[i].string) == 0) {
-				alg_field = field_lookup[i].field;
-				break;
-			}
-		}
+		uint32_t alg_field = field_lookup_from_str(field);
 		assert(alg_field != 0);
 		assert((algorithm->used_fields & alg_field) == 0);
 
