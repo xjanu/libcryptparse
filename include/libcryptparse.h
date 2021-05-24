@@ -72,8 +72,11 @@ struct cryptparse_alg {
 	unsigned seedsize;
 	bool selftest;
 	unsigned walksize;
+	struct cryptparse_alg *next;
 };
 
 int cryptparse_parse(char *path, struct cryptparse_alg **algorithms);
+
+void cryptparse_destroy(struct cryptparse_alg *algorithms);
 
 #endif // LIBCRYPTPARSE_H

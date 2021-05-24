@@ -7,6 +7,6 @@ int main()
 {
 	struct cryptparse_alg *algorithms;
 	cryptparse_parse("/proc/crypto", &algorithms);
-	free(algorithms);
+	cryptparse_destroy(algorithms);
 	return 0;
 }

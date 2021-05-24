@@ -103,6 +103,7 @@ static void _alg_destroy(struct cryptparse_alg *algorithm)
 	algorithm->used_fields = 0;
 	// Don't leave garbage in memory
 	memset(algorithm, 0, sizeof(struct cryptparse_alg));
+	free(algorithm);
 }
 
 static int line_parser(char* line, char **field, char **value)
@@ -134,6 +135,7 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 	int ret = 0;
 
 	algorithm->used_fields = 0;
+	algorithm->next = NULL;
 
 	char *line = NULL;
 	size_t line_buf_len = 0;
@@ -251,8 +253,16 @@ int cryptparse_parse(char *path, struct cryptparse_alg **algorithms)
 	*algorithms = malloc(sizeof(struct cryptparse_alg));
 	cryptparse_alg_parse(fp, *algorithms);
 
-	_alg_destroy(*algorithms);
 	fclose(fp);
+	return 0;
+}
 
-	return 1;
+void cryptparse_destroy(struct cryptparse_alg *algorithms)
+{
+	struct cryptparse_alg *next;
+	while (algorithms != NULL) {
+		next = algorithms->next;
+		_alg_destroy(algorithms);
+		algorithms = next;
+	}
 }
