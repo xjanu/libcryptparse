@@ -105,9 +105,31 @@ static void _alg_destroy(struct cryptparse_alg *algorithm)
 	memset(algorithm, 0, sizeof(struct cryptparse_alg));
 }
 
+static int line_parser(char* line, char **field, char **value)
+{
+	// Find the separating colon
+	char *colon = strchr(line, ':');
+	if (colon == NULL) {
+		return 1; // No field-value separator.
+	}
+
+	// Get rid of trailing whitespace after field.
+	*field = line;
+	char *end = colon - 1;
+	while (end > line && *end == ' ')
+		--end;
+	end[1] = '\0';
+
+	if (colon[1] != ' ') {
+		return 1; // Value not found.
+	}
+	*value = colon + 2;
+
+	return 0;
+}
+
 static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 {
-	// TODO: Better decomposition
 	// TODO: Better error checking and reporting
 	int ret = 0;
 
@@ -117,24 +139,24 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 	size_t line_buf_len = 0;
 	ssize_t nread;
 
+	char *field, *value;
+
 	while ((nread = getline(&line, &line_buf_len, fp)) != -1) {
 		if (nread == 1)
 			break;
-		assert(line[nread - 1] == '\n');
-		line[nread-1] = '\0';
 
-		char *colon = strchr(line, ':');
-		assert(colon != NULL);
+		if (line[nread - 1] != '\n') {
+			// Missing newline at EOF.
+			ret = 1;
+			goto out;
+		}
+		line[nread - 1] = '\0';
 
-		char *field = line;
-		for (char* i = colon - 1; i >= field && *i == ' '; --i)
-			*i = '\0';
-
-		assert(*colon == ':');
-		assert(*(colon + 1) == ' ');
-		assert(line[nread - 1] == '\0');
-		line[nread] = '\0';
-		char *value = colon + 2;
+		if (line_parser(line, &field, &value) != 0) {
+			// Failed to parse line
+			ret = 1;
+			goto out;
+		}
 
 		uint32_t alg_field = field_lookup_from_str(field);
 		assert(alg_field != 0);
