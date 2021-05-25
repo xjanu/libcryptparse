@@ -239,7 +239,8 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 			goto out;
 		}
 	}
-
+	if (nread == -1)
+		ret = 2;
 out:
 	free(line);
 	return ret;
@@ -248,11 +249,20 @@ out:
 int cryptparse_parse(char *path, struct cryptparse_alg **algorithms)
 {
 	FILE *fp = fopen(path, "r");
+	struct cryptparse_alg *prev, *curr;
 
-	// TODO: Parse more than one algo ^_~
 	*algorithms = malloc(sizeof(struct cryptparse_alg));
 	cryptparse_alg_parse(fp, *algorithms);
-
+	prev = *algorithms;
+	while (true) {
+		curr = malloc(sizeof(struct cryptparse_alg));
+		if (cryptparse_alg_parse(fp, curr) != 0) {
+			free(curr);
+			break;
+		}
+		prev->next = curr;
+		prev = curr;
+	}
 	fclose(fp);
 	return 0;
 }
