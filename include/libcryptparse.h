@@ -9,21 +9,21 @@
 enum cryptparse_type {
 	cryptparse_type_unknown,
 	cryptparse_type_cipher,
-        cryptparse_type_ablkcipher,
-        cryptparse_type_akcipher,
-        cryptparse_type_blkcipher,
-        cryptparse_type_givcipher,
-        cryptparse_type_skcipher,
-        cryptparse_type_aead,
-        cryptparse_type_nivaead,
-        cryptparse_type_ahash,
-        cryptparse_type_shash,
-        cryptparse_type_compression,
-        cryptparse_type_digest,
-        cryptparse_type_kpp,
-        cryptparse_type_pcomp,
-        cryptparse_type_scomp,
-        cryptparse_type_rng
+	cryptparse_type_ablkcipher,
+	cryptparse_type_akcipher,
+	cryptparse_type_blkcipher,
+	cryptparse_type_givcipher,
+	cryptparse_type_skcipher,
+	cryptparse_type_aead,
+	cryptparse_type_nivaead,
+	cryptparse_type_ahash,
+	cryptparse_type_shash,
+	cryptparse_type_compression,
+	cryptparse_type_digest,
+	cryptparse_type_kpp,
+	cryptparse_type_pcomp,
+	cryptparse_type_scomp,
+	cryptparse_type_rng
 };
 
 enum cryptparse_alg_fields {
