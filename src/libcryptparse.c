@@ -39,8 +39,8 @@ static const struct field_binding field_lookup[] = {
 	{"internal",    cryptparse_alg_internal},
 	{"ivsize",      cryptparse_alg_ivsize},
 	{"maxauthsize", cryptparse_alg_maxauthsize},
-	{"max_keysize", cryptparse_alg_max_keysize},
-	{"min_keysize", cryptparse_alg_min_keysize},
+	{"max keysize", cryptparse_alg_max_keysize},
+	{"min keysize", cryptparse_alg_min_keysize},
 	{"seedsize",    cryptparse_alg_seedsize},
 	{"selftest",    cryptparse_alg_selftest},
 	{"walksize",    cryptparse_alg_walksize}
