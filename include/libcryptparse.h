@@ -75,8 +75,21 @@ struct cryptparse_alg {
 	struct cryptparse_alg *next;
 };
 
+/**
+ * Parse the supplied file.
+ * @param[in]  path       usually @c /proc/crypto
+ * @param[out] algorithms struct containing all the parsed information
+ *
+ * @return 0 on success, other values on failure
+ *
+ * @remark This function allocates memory for the cryptparse_alg datastructures.
+ *     You should always call cryptparse_destroy after being done.
+ */
 int cryptparse_parse(char *path, struct cryptparse_alg **algorithms);
 
+/**
+ * Cleanup routine.
+ */
 void cryptparse_destroy(struct cryptparse_alg *algorithms);
 
 #endif // LIBCRYPTPARSE_H
