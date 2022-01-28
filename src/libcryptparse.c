@@ -15,8 +15,6 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
-// TODO: Check all mallocs
-
 // Used for binding strings to fields
 struct field_binding {
 	char *string;
@@ -59,8 +57,9 @@ uint32_t field_lookup_from_str(char *from)
 static int value_parser_string(char **res, char *value)
 {
 	*res = calloc(strlen(value) + 1, sizeof(char));
-	if (*res == NULL)
+	if (*res == NULL) {
 		return ENOMEM;
+	}
 	strcpy(*res, value);
 	return 0;
 }
@@ -83,8 +82,9 @@ static int value_parser_unsigned(unsigned *res, char *value)
 	errno = 0;
 	unsigned long big = strtoul(value, NULL, 10);
 	*res = big;
-	if (big > UINT_MAX)
+	if (big > UINT_MAX) {
 		return ERANGE;
+	}
 	return errno;
 }
 
@@ -161,8 +161,14 @@ static int cryptparse_alg_parse(FILE *fp, struct cryptparse_alg *algorithm)
 		}
 
 		uint32_t alg_field = field_lookup_from_str(field);
-		assert(alg_field != 0);
-		assert((algorithm->used_fields & alg_field) == 0);
+		if (alg_field == 0) {
+			// Invalid field name
+			continue;
+		}
+		if ((algorithm->used_fields & alg_field) != 0) {
+			// Field appeared twice
+			continue;
+		}
 
 		algorithm->used_fields |= alg_field;
 
@@ -249,10 +255,22 @@ out:
 int cryptparse_parse(char *path, struct cryptparse_alg **algorithms)
 {
 	FILE *fp = fopen(path, "r");
-	struct cryptparse_alg *prev, *curr;
+	if (fp == NULL) {
+		*algorithms = NULL;
+		return 1;
+	}
 
+	struct cryptparse_alg *prev, *curr;
 	*algorithms = malloc(sizeof(struct cryptparse_alg));
-	cryptparse_alg_parse(fp, *algorithms);
+	if (algorithms == NULL) {
+		return 1;
+	}
+
+	if (cryptparse_alg_parse(fp, *algorithms) != 0)
+	{
+		return 1;
+	}
+
 	prev = *algorithms;
 	while (true) {
 		curr = malloc(sizeof(struct cryptparse_alg));
